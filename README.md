@@ -6,6 +6,18 @@ basically just form posts to their server don't complain here about the way it
 works. The only thing we really changed was how results are wrapped and
 returned and you can read more about that here.
 
+## IMPORTANT: DO NOT USE THIS FOR THE LATEST DEVELOPMENT
+
+This is a version that is meant to be compatible with `ruby-2.0.0-p247`
+
+It is being checkout from this commit: https://github.com/mhenrixon/active_campaign/commit/ad269074dc74d5fdd200514779aa7aff73766530
+
+Which is corresponding with the version on rubygems.org: https://rubygems.org/gems/active_campaign/versions/0.1.9
+
+And a fix related to https://github.com/mhenrixon/active_campaign/issues/20 was added
+
+Please do not use this when doing new development
+
 ## Installation
 
 Add this line to your application's Gemfile:

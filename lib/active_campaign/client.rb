@@ -59,7 +59,7 @@ module ActiveCampaign
       def create_request(method, api_method, options = {})
         request = HTTPI::Request.new url: File.join(api_endpoint, api_path)
 
-        request.headers              = { "User-Agent" => user_agent }
+        request.headers              = request_headers
         request.auth.ssl.verify_mode = :none
         request.query                = query(method, api_method, options)
         request.body                 = body(method, api_method, options)
@@ -122,6 +122,13 @@ module ActiveCampaign
 
       def results(response)
         response.reject{|k,v| %w(result_code result_message result_output).include?(k) }
+      end
+
+      def request_headers
+        {
+          'User-Agent' => user_agent,
+          'Content-Type' => 'application/x-www-form-urlencoded'
+        }
       end
   end
 end
